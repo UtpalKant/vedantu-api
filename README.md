@@ -22,6 +22,9 @@ type: HTTP POST
 
 parameters: from body, all 3 required.
 import below given CURL to your postman
+userId: any guid/string
+productId: integer/number
+quantity: integer/number
 
 CURL:
 curl --location --request POST 'http://localhost:8080/shop/order' \
@@ -37,8 +40,8 @@ Body-Params, Content-Type: application/x-www-form-urlencoded
 framework used:
     - express
 middlewares :
-    - node-input-validator
-    - CORS handling by custom created middleware
+    - node-input-validator, body parser etc.
+    - CORS & AUTH handling by custom created middleware.
 db & orm/odm :
     - mongoDB 
     - mongoose, mongoose-models
@@ -57,7 +60,7 @@ and many more things, haven't implemented authentication middleware, but it can 
 4. If stock not found delete the entry made and inform customer.
 
 // by using async-mutex
-Although I read about async mutex, and implemented it to make each process as mutually exclusive.
+Although I read about async mutex, and implemented it to make each process as mutually exclusive, for the part where entry is made into order table & inventory is updated.
 
 Feel free to reach me at +91 6200557251.
 Write at rudra.utpal@gmail.com.

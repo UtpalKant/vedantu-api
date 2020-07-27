@@ -20,8 +20,11 @@ module.exports = {
 
         let orderDetails = null;
         try {
+            // as stock exist, go and make entry to orders.
             orderDetails = await OrderDetails.insertMany([{ productId, userId, quantity, orderStatus: "Placed" }]);
+            // update inventory
             let stock = await Inventory.findOneAndUpdate({ productId, stockSize: { $gte: quantity } }, { $inc: { stockSize: -quantity } });
+            // if inventory update fails. Delete order.
             if (!stock) {
                 await OrderDetails.findOneAndDelete(orderDetails);
                 orderDetails = null;
@@ -29,6 +32,7 @@ module.exports = {
                     message: 'product out of stock', statusCode: 200, data: orderDetails
                 };
             }
+            // if all smooth
             return orderDetails;
         } catch (ex) {
             orderDetails = null;
