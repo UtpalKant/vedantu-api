@@ -9,7 +9,7 @@ step 3: npm run start
 3. added a migrate.js file to generate some data in inventory to start with, feel free to modify it.
 
 A hosted version is available at: 
-
+baseURL: https://vedantutest.herokuapp.com/shop/order
 
 # API details.
 
@@ -17,6 +17,8 @@ A hosted version is available at:
 
 URL:
 http://localhost:8080/shop/order
+
+type: HTTP POST
 
 parameters: from body, all 3 required.
 import below given CURL to your postman
