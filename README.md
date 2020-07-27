@@ -46,7 +46,7 @@ db & orm/odm :
 locking :
     - async-mutex
 
-and many more things
+and many more things, haven't implemented authentication middleware, but it can be chained in whichever route we require or even globally.
 
 # Implementation to avoid race conditions:
 
