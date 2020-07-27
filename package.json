@@ -1,0 +1,26 @@
+{
+  "name": "node-express-jwt",
+  "version": "1.0.0",
+  "description": "e-comm order",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "nodemon": "nodemon app"
+  },
+  "author": "utpal kant",
+  "license": "ISC",
+  "dependencies": {
+    "async-mutex": "^0.2.4",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.2",
+    "mongoose-unique-validator": "^2.0.3",
+    "node-input-validator": "^4.2.1",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
